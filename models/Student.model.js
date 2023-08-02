@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const teacherSchema = new Schema(
+const studentSchema = new Schema(
     {
         name: {
             type: String,
@@ -23,7 +23,6 @@ const teacherSchema = new Schema(
         profileImg: {
             type: String
         },
-        subjects: [{type:mongoose.Schema.Types.ObjectId, ref:'subjects'}]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    
@@ -31,6 +30,6 @@ const teacherSchema = new Schema(
     }
 );
 
-const Teacher = model("teacher", teacherSchema);
+const Student = model("student", studentSchema);
 
-module.exports = Teacher;
+module.exports = Student;
