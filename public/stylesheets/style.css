@@ -1,78 +1,30 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("../public/images/teste.jpg");
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-a {
-  color: #00B7FF;
-}
+ul.topnav li {float: left;}
 
-h2 {
-  color: darkslategrey;
-}
-
-.login-signup {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.login-signup a {
-  margin-right: 10px;
-}
-
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1cm;
-}
-
-#form {
-  text-align: center;
-  padding: 25px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-}
-
-#form h2 {
-  margin-bottom: 20px;
-}
-
-#form label {
+ul.topnav li a {
   display: block;
-  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-#form input {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 20px;
-  margin-left: 0; /* Remover a margem esquerda padrão */
-  margin-right: 0; /* Remover a margem direita padrão */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+ul.topnav li a:hover:not(.active) {background-color: #111;}
 
-#form button {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
+ul.topnav li a.active {background-color: #04AA6D;}
 
-#form button:hover {
-  background-color: #45a049;
-}
+ul.topnav li.right {float: right;}
 
-
-#form input[type="email"],
-#form input[type="password"] {
-  margin-right: 10; 
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
 }
