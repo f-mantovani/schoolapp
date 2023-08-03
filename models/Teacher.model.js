@@ -5,7 +5,7 @@ const teacherSchema = new Schema(
     {
         name: {
             type: String,
-            name: required,
+            required: true,
         },
         address: {
             type: String

@@ -1,4 +1,134 @@
-body {margin: 0;}
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Additional styling for each specific detail */
+.books-table td.name {
+  font-weight: bold;
+}
+
+.books-table td.author {
+  font-style: italic;
+}
+
+.price {
+  color: #008000; /* Green color for price */
+  font-weight: bold;
+}
+
+.edit-button {
+  background-color: #FFD700; /* Yellow color for Edit button */
+  color: #333;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-button {
+  background-color: #FF0000; /* Red color for Delete button */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* New styles for the book creation form */
+
+.row {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  background-color: #008000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #006400;
+}
+
+button:active {
+  background-color: #004c00;
+}
+
+
+.price {
+  color: #008000; /* Green color for price */
+  font-weight: bold;
+}
+
+.books-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.books-table th,
+.books-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.books-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Additional styling for each specific detail */
+.books-table td.name {
+  font-weight: bold;
+}
+
+.books-table td.author {
+  font-style: italic;
+}
+
+.price {
+  color: #008000; /* Green color for price */
+}
+
+.edit-button {
+  background-color: #FFD700; /* Yellow color for Edit button */
+  color: #333;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-button {
+  background-color: #FF0000; /* Red color for Delete button */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contain {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  text-align: center;
+  width:80px;
+  border-top:1px solid #7c7c7c;
+}
+
+.button-right {
+  text-align: right;
+}
 
 ul.topnav {
   list-style-type: none;
@@ -8,7 +138,9 @@ ul.topnav {
   background-color: #333;
 }
 
-ul.topnav li {float: left;}
+ul.topnav li {
+  float: left;
+}
 
 ul.topnav li a {
   display: block;
@@ -18,13 +150,51 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
 
-ul.topnav li a.active {background-color: #04AA6D;}
+ul.topnav li a.active {
+  background-color: #04AA6D;
+}
 
-ul.topnav li.right {float: right;}
+ul.topnav li.right {
+  float: right;
+}
+
+
+form {
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.card {
+  background-color: lightgrey; /* Alterei a cor de fundo para um tom mais claro */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumentei a opacidade da sombra */
+  padding: 20px;
+}
+
+/* Ajustes nos campos de entrada */
+input[type="text"],
+input[type="number"] {
+  width: 95%;
+  padding: 10px; /* Aumentei o tamanho do padding */
+  margin-bottom: 10px; /* Adicionei um espaçamento entre os campos */
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+label {
+  font-weight: bold;
+  display: block; /* Para que cada label ocupe uma linha completa */
+}
 
 @media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
 }

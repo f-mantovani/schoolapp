@@ -5,12 +5,12 @@ const subjectSchema = new Schema(
     {
         name: {
             type: String,
-            name: required,
+            required: true,
         },
         pricePerHour: {
             type: Number
         },
-        books: [{type:mongoose.Schema.Types.ObjectId, ref:'subject'}]
+        books: [{type:mongoose.Schema.Types.ObjectId, ref:'book'}]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    

@@ -1,0 +1,33 @@
+<div class="container">
+    <form action="/book/new-book" method="POST" class="book-form">
+      <div class="card">
+        <div class="row">
+          <label for="name">
+            Name
+            <input type="text" name="name" id="name" required>
+          </label>
+        </div>
+        <div class="row">
+          <label for="author">
+            Author
+            <input type="text" name="author" id="author" required>
+          </label>
+        </div>
+        <div class="row">
+          <label for="year">
+            Year
+            <input type="number" name="year" id="year" required>
+          </label>
+        </div>
+        <div class="row">
+          <label for="price">
+            Price
+            <input type="number" name="price" id="price" step="0.01" required>
+          </label>
+        </div>
+        <div class="row">
+          <button type="submit">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>

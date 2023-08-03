@@ -5,13 +5,16 @@ const bookSchema = new Schema(
     {
         name: {
             type: String,
-            name: required,
+            required: true
         },
         author: {
             type: String
         },
         year: {
             type: Number
+        },
+        bookImg: {
+            type: String
         },
         price: {
             type: Number

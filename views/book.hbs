@@ -1,0 +1,28 @@
+<br>
+<div>
+    <a href="/book/new-book">New Book</a>
+</div>
+<br>
+<table class="books-table">
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Price</th>
+    </tr>
+    {{#each allBooks}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{author}}</td>
+        <td>{{year}}</td>
+        <td class="price">{{price}}</td>
+
+        <td>
+            <a href="/book/id:/edit-book"><button class="edit-button">Edit</button></a>
+        </td>
+        <td>
+            <a href="/book/id:/delete-book"><button class="delete-button">delete</button></a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
