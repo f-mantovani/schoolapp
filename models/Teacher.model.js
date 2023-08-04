@@ -23,7 +23,7 @@ const teacherSchema = new Schema(
         profileImg: {
             type: String
         },
-        subjects: [{type:mongoose.Schema.Types.ObjectId, ref:'subjects'}]
+        subjects: [{type:mongoose.Schema.Types.ObjectId, ref:'subject'}]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    

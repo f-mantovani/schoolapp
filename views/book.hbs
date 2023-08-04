@@ -1,4 +1,7 @@
 <br>
+
+<h1>List of Books</h1>
+
 <div>
     <a href="/book/new-book">New Book</a>
 </div>
@@ -11,18 +14,30 @@
         <th>Price</th>
     </tr>
     {{#each allBooks}}
-    <tr>
-        <td>{{name}}</td>
-        <td>{{author}}</td>
-        <td>{{year}}</td>
-        <td class="price">{{price}}</td>
 
-        <td>
-            <a href="/book/id:/edit-book"><button class="edit-button">Edit</button></a>
-        </td>
-        <td>
-            <a href="/book/id:/delete-book"><button class="delete-button">delete</button></a>
-        </td>
+    <td>{{name}}</td>
+    <td>{{author}}</td>
+    <td>{{year}}</td>
+    <td class="price">{{price}}</td>
+
+    <td>
+        <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>        
+    </td>
+
+    <form action="/book/{{_id}}/delete" method="POST">
+       <td>
+           <button class="delete-button">delete</button>
+       </td>
+    </form>
+      
+      <!--<form action="/book/{{_id}}/delete" method="POST">
+         <td>
+          <button>Delete Book</button>
+          </td>
+      </form>-->
+
     </tr>
     {{/each}}
 </table>
+
+        <!--<a href="/book/id:/delete-book"><button class="delete-button">delete</button></a>-->

@@ -1,0 +1,36 @@
+<h1>Editing Book: {{name}}</h1>
+
+
+<form action="/book/{{_id}}/edit" method="POST">
+  <div class="container">
+    <div class="card">
+      <div class="row">
+        <label for="name">
+          Name
+          <input type="text" name="name" id="name" value="{{name}}" required>
+        </label>
+      </div>
+      <div class="row">
+        <label for="name">
+          Author
+          <input type="text" name="author" id="author" value="{{author}}">
+        </label>
+      </div>
+      <div class="row">
+        <label for="year">
+          Year
+          <input type="number" name="year" value="{{year}}" id="{{year}}">
+        </label>
+      </div>
+      <div class="row">
+        <label for="price">
+          Price
+          <input type="number" name="price" id="price" value="{{price}}" required>
+        </label>
+      </div>
+      <div class="row">
+        <button type="submit"> Save Changes </button>
+      </div>
+    </div>
+  </div>
+</form>
