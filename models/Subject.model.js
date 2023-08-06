@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const mongoose = require('mongoose')
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const subjectSchema = new Schema(
@@ -9,8 +10,8 @@ const subjectSchema = new Schema(
         },
         pricePerHour: {
             type: Number
-        },
-        books: [{type:mongoose.Schema.Types.ObjectId, ref:'book'}]
+        },        
+       books: [{type: mongoose.Schema.Types.ObjectId, ref:'book'}]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    
@@ -19,6 +20,5 @@ const subjectSchema = new Schema(
 );
 
 const Subject = model("subject", subjectSchema);
-
 
 module.exports = Subject;

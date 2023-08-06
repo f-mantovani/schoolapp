@@ -1,0 +1,27 @@
+<h1>Creating New Subject</h1>
+
+<div class="container-button">
+  <a href="/subject"><button>Back</button></a>
+</div>
+
+<div class="container">
+    <form action="/subject/new-subject" method="POST" class="book-form">
+      <div class="card">
+        <div class="row">
+          <label for="name">
+            Name
+            <input type="text" name="name" id="name" required>
+          </label>
+        </div>        
+        <div class="row">
+          <label for="price">
+            Price Per Hour
+            <input type="number" name="pricePerHour" id="pricePerHour" required>
+          </label>
+        </div>
+        <div class="row">
+          <button type="submit">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>

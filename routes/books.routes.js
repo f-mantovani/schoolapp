@@ -30,10 +30,8 @@ router.get("/", (req, res, next) => {
 });
 
 router.get('/:id/edit',(req,res)=>{
-  console.log(req.params)
    Book.findById(req.params.id)
    .then((oneBookToBeEdited)=>{
-      console.log(oneBookToBeEdited)
       res.render('edit-book',oneBookToBeEdited)
    })
    .catch((err)=>{
@@ -42,15 +40,8 @@ router.get('/:id/edit',(req,res)=>{
 })
 
 router.post('/:id/edit',(req,res)=>{
-  console.log("req.body")
-  console.log(req.body)
-
-  console.log("req.params")
-  console.log(req.params)
-
   const {name, author, year, price} = req.body
-
-  Book.findByIdAndUpdate(req.params.id,{ name, author, year, price})
+  Book.findByIdAndUpdate(req.params.id,{name, author, year, price})
   .then((updatedBook)=>{
       res.redirect('/book')
   })

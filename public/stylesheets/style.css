@@ -44,6 +44,11 @@ label {
   font-weight: bold;
 }
 
+.container-button {
+  display: flex; /* Torna o container um flex container */
+  justify-content: center; /* Alinha o conteúdo horizontalmente no centro */
+  align-items: center; /* Alinha o conteúdo verticalmente no centro */
+}
 
 button {
   background-color: #008000;
