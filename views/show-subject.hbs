@@ -1,13 +1,28 @@
-<h1>Showing subject {{name}}</h1>
-
-
+<h1>Showing subject: {{subject.name}}</h1>
 
 <div class="container">
-    <div class="card">
+    <div class="card-show">
         <div class="row">
             <label for="pricePerHour">
-                Price Per Hour
-                {{pricePerHour}}
+                Price Per Hour:
+                <br>
+                <br>
+                $ {{subject.pricePerHour}}
+            </label>
+            <br>
+            <br>
+            <label for="books">
+                Books For This Subject:
+                <br>
+                <br>
+                <table>
+                    {{#each booksArray}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td> ---------- $ {{price}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
             </label>
         </div>
         <div class="row">

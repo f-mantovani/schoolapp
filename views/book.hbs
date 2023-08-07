@@ -21,23 +21,17 @@
     <td class="price">$ {{price}}</td>
 
     <td>
-        <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>        
+        <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
     </td>
 
     <form action="/book/{{_id}}/delete" method="POST">
-       <td>
-           <button class="delete-button">delete</button>
-       </td>
+        <td>
+            <button class="delete-button">delete</button>
+        </td>
     </form>
-      
-      <!--<form action="/book/{{_id}}/delete" method="POST">
-         <td>
-          <button>Delete Book</button>
-          </td>
-      </form>-->
 
     </tr>
     {{/each}}
 </table>
 
-        <!--<a href="/book/id:/delete-book"><button class="delete-button">delete</button></a>-->
+<!--<a href="/book/id:/delete-book"><button class="delete-button">delete</button></a>-->

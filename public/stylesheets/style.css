@@ -178,6 +178,15 @@ form {
   padding: 20px;
 }
 
+.card-show {
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 400px; /* Defina um valor adequado à sua preferência */
+  margin: 0 auto; /* Isso centralizará a caixa horizontalmente */
+}
+
 /* Ajustes nos campos de entrada */
 input[type="text"],
 input[type="number"] {

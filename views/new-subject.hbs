@@ -5,23 +5,34 @@
 </div>
 
 <div class="container">
-    <form action="/subject/new-subject" method="POST" class="book-form">
-      <div class="card">
-        <div class="row">
-          <label for="name">
-            Name
-            <input type="text" name="name" id="name" required>
-          </label>
-        </div>        
-        <div class="row">
-          <label for="price">
-            Price Per Hour
-            <input type="number" name="pricePerHour" id="pricePerHour" required>
-          </label>
-        </div>
-        <div class="row">
-          <button type="submit">Create</button>
-        </div>
+  <form action="/subject/new-subject" method="POST" class="book-form">
+    <div class="card">
+      <div class="row">
+        <label for="name">
+          Name
+          <input type="text" name="name" id="name" required>
+        </label>
       </div>
-    </form>
-  </div>
+      <div class="row">
+        <label for="price">
+          Price Per Hour
+          <input type="number" name="pricePerHour" id="pricePerHour" required>
+        </label>
+      </div>
+      <div class="row"></div>
+      <label for="book">
+        Books
+        <br>
+        <select name="book" id="" multiple>
+          {{#each allBooks}}
+          <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+    </div>
+    </label>
+    <div class="row">
+      <button type="submit">Create</button>
+    </div>
+</div>
+</form>
+</div>
