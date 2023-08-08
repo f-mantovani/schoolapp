@@ -1,0 +1,40 @@
+<h1>Editing Subject: {{name}}</h1>
+
+<div class="container-button">
+    <a href="/subject"><button>Back</button></a>
+</div>
+<br>
+<div class="container-subject">
+
+    <form action="/subject/{{_id}}/edit" method="POST">
+        <div>
+            <div class="row">
+                <label for="name">
+                    Name
+                    <input type="text" name="name" id="name" value="{{name}}" required>
+                </label>
+            </div>
+            <div class="row">
+                <label for="price">
+                    Price Per Hour
+                    <input type="number" name="pricePerHour" id="pricePerHour" value="{{pricePerHour}}" required>
+                </label>
+            </div>
+            <div class="row"></div>
+            <label for="book">
+                Books
+                <br>
+                <select name="book" id="" multiple>
+                    {{#each books}}
+                    <option value="{{_id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+        </div>
+        </label>
+        <br>
+        <div class="row">
+            <button type="submit"> Save Changes </button>
+        </div>
+</div>
+</form>
+</div>

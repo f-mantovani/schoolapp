@@ -84,7 +84,7 @@ router.get("/:id/details", (req, res, next) => {
             Promise.all(bookPromises)
                 .then(results => {
                     thinyArray.push(...results);
-                    
+
                     res.render("show-subject", {
                         subject: subjectToBeShowed,
                         booksArray: thinyArray
@@ -100,6 +100,28 @@ router.get("/:id/details", (req, res, next) => {
             // Tratar erro adequadamente
         });
 });
+
+router.get('/:id/edit', (req, res) => {
+    Subject.findById(req.params.id).populate('books')
+      .then((oneSubjectToBeEdited) => {
+        console.log(oneSubjectToBeEdited)
+        res.render('edit-subject', oneSubjectToBeEdited)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  })
+
+router.post('/:id/edit', (req, res) => {
+    const { name, pricePerHour } = req.body
+    Subject.findByIdAndUpdate(req.params.id, { name, pricePerHour })
+      .then((updatedSubject) => {
+        res.redirect('/subject')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
 
 router.post('/:id/delete', (req, res) => {
     console.log(req.params)
