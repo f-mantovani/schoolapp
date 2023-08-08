@@ -1,0 +1,69 @@
+[{
+  "_id": {
+    "$oid": "64d254dcf1e53d0339d77a6c"
+  },
+  "name": "Mathematic",
+  "pricePerHour": 13,
+  "books": [
+    {
+      "$oid": "64d25145f1e53d0339d77a2d"
+    },
+    {
+      "$oid": "64d251fcf1e53d0339d77a34"
+    },
+    {
+      "$oid": "64d25230f1e53d0339d77a3a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-08T14:44:44.895Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:44:44.895Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d2609ef1e53d0339d77a90"
+  },
+  "name": "Chemistry",
+  "pricePerHour": 11,
+  "books": [
+    {
+      "$oid": "64d25359f1e53d0339d77a46"
+    },
+    {
+      "$oid": "64d25380f1e53d0339d77a49"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-08T15:34:54.274Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T15:34:54.274Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d260bff1e53d0339d77aa1"
+  },
+  "name": "English",
+  "pricePerHour": 12,
+  "books": [
+    {
+      "$oid": "64d253caf1e53d0339d77a4c"
+    },
+    {
+      "$oid": "64d25407f1e53d0339d77a4f"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-08-08T15:35:27.657Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T15:35:27.657Z"
+  },
+  "__v": 0
+}]

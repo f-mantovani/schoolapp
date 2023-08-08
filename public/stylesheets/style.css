@@ -183,8 +183,22 @@ form {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  max-width: 400px; /* Defina um valor adequado à sua preferência */
-  margin: 0 auto; /* Isso centralizará a caixa horizontalmente */
+  max-width: 800px; /* Aumente o valor para tornar a caixa mais larga */
+  width: 100%; /* Ocupar toda a largura disponível */
+  margin: 0 auto; /* Centralizar horizontalmente */
+  display: flex; /* Usar flexbox para ajustar a altura e alinhar o botão */
+  flex-direction: column; /* Alinhar itens verticalmente */
+}
+.container-subject  {
+  background-color: lightgrey;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 600px; /* Aumente o valor para tornar a caixa mais larga */
+  width: 100%; /* Ocupar toda a largura disponível */
+  margin: 0 auto; /* Centralizar horizontalmente */
+  display: flex; /* Usar flexbox para ajustar a altura e alinhar o botão */
+  flex-direction: column; /* Alinhar itens verticalmente */
 }
 
 /* Ajustes nos campos de entrada */

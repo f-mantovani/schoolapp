@@ -1,0 +1,176 @@
+[{
+  "_id": {
+    "$oid": "64d25145f1e53d0339d77a2d"
+  },
+  "name": "What Is Mathematics?",
+  "author": " Richard Courant",
+  "year": 1941,
+  "price": 21,
+  "createdAt": {
+    "$date": "2023-08-08T14:29:25.734Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:44:44.900Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d2518af1e53d0339d77a30"
+  },
+  "name": "Calculus Made Easy",
+  "author": "Silvanus Phillips Thompson",
+  "year": 1910,
+  "price": 58,
+  "createdAt": {
+    "$date": "2023-08-08T14:30:34.210Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:32:34.661Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d251fcf1e53d0339d77a34"
+  },
+  "name": "The Art of Statistics: How to Learn from Data",
+  "author": "David Spiegelhalter",
+  "year": 2019,
+  "price": 21,
+  "createdAt": {
+    "$date": "2023-08-08T14:32:28.248Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:32:28.248Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d25230f1e53d0339d77a3a"
+  },
+  "name": "Foundation Maths",
+  "author": "Anthony Croft",
+  "year": 2020,
+  "price": 47,
+  "createdAt": {
+    "$date": "2023-08-08T14:33:20.136Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:33:20.136Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d2526ef1e53d0339d77a3d"
+  },
+  "name": "Calculus (International Metric Edition)",
+  "author": "James Michael Stewart, Roland Minton",
+  "year": 2007,
+  "price": 100,
+  "createdAt": {
+    "$date": "2023-08-08T14:34:22.987Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:34:22.987Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d252a0f1e53d0339d77a40"
+  },
+  "name": "Mathematics for Engineers",
+  "author": "Robert Davison",
+  "year": 2019,
+  "price": 39,
+  "createdAt": {
+    "$date": "2023-08-08T14:35:12.774Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:35:12.774Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d25316f1e53d0339d77a43"
+  },
+  "name": "Super Simple Chemistry",
+  "author": "DK",
+  "year": 2020,
+  "price": 15,
+  "createdAt": {
+    "$date": "2023-08-08T14:37:10.492Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:37:10.492Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d25359f1e53d0339d77a46"
+  },
+  "name": "Chemistry, Global Edition",
+  "author": "Jill Kirsten Robinson",
+  "year": 1982,
+  "price": 9,
+  "createdAt": {
+    "$date": "2023-08-08T14:38:17.788Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T15:34:54.277Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d25380f1e53d0339d77a49"
+  },
+  "name": "Chemistry Book",
+  "author": "Derek B. Lowe",
+  "year": 2019,
+  "price": 25,
+  "createdAt": {
+    "$date": "2023-08-08T14:38:56.435Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:38:56.435Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d253caf1e53d0339d77a4c"
+  },
+  "name": "Practical English Usage",
+  "author": "Michael Swan",
+  "year": 2016,
+  "price": 32,
+  "createdAt": {
+    "$date": "2023-08-08T14:40:10.442Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T15:35:27.661Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64d25407f1e53d0339d77a4f"
+  },
+  "name": "Thirty Days to Better English: Learn to Speak and Write More Effectively",
+  "author": "Norman Lewis",
+  "year": 1973,
+  "price": 6,
+  "createdAt": {
+    "$date": "2023-08-08T14:41:11.593Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-08T14:41:11.593Z"
+  },
+  "__v": 0
+}]

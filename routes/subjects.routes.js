@@ -84,13 +84,10 @@ router.get("/:id/details", (req, res, next) => {
             Promise.all(bookPromises)
                 .then(results => {
                     thinyArray.push(...results);
-
-                    console.log("-------------thinyArray--------------");
-                    console.log(thinyArray);
-
+                    
                     res.render("show-subject", {
                         subject: subjectToBeShowed,
-                        booksArray: thinyArray 
+                        booksArray: thinyArray
                     });
                 })
                 .catch(err => {
