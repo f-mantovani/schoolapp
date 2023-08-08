@@ -1,61 +1,4 @@
-<h1>List of Students</h1>
-
-<div>
-    <a href="/student/new-student">New student</a>
-</div>
 <br>
-<table class="student-table">
-    <tr>
-        <th>profileImage</th>
-        <br> 
-        <th>Name</th>
-        <th>address</th>
-        <th>email</th>
-        <th>phoneNumber</th>
-    </tr>
-    {{#each student}}
-
-    <td>{{name}}</td>
-    <td>{{address}}</td>
-    <td>{{email}}</td>
-    <td>{{phoneNumber}}</td>
-
-    <td>
-        <a href="/student/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
-    </td>
-
-    <form action="/student/{{_id}}/delete" method="POST">
-        <td>
-            <button class="delete-button">delete</button>
-        </td>
-    </form>
-
-    <!--<form action="/book/{{_id}}/delete" method="POST">
-         <td>
-          <button>Delete Book</button>
-          </td>
-      </form>-->
-
-    </tr>
-    {{/each}}
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<br>
 
 <h1>List of Students</h1>
 
@@ -72,8 +15,8 @@
     {{#each allStudents}}
 
     <td>{{name}}</td>
-    <td class="name">$ {{pricePerHour}}</td>
-
+    <td>{{email}}</td>
+    <td>{{phoneNumber}}</td>
     <td>
         <a href="/subject/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>        
     </td>
@@ -97,8 +40,39 @@
 
 
 
-name: 
-address:
-phoneNumber:
-email:
-profileImg: -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
