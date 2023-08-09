@@ -15,64 +15,22 @@
     {{#each allStudents}}
 
     <td>{{name}}</td>
-    <td>{{email}}</td>
     <td>{{phoneNumber}}</td>
+    <td>{{email}}</td>
     <td>
-        <a href="/subject/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>        
+        <a href="/student/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
     </td>
-       
-    <form action="/subject/{{_id}}/delete" method="POST">
-       <td>
-           <button class="delete-button">delete</button>
-       </td>
+
+    <form action="/student/{{_id}}/delete" method="POST">
+        <td>
+            <button class="delete-button">delete</button>
+        </td>
     </form>
 
     <td>
-        <a href="/subject/{{_id}}/details"> <button class="row">Details</button> </a>
+        <a href="/student/{{_id}}/details"> <button class="row">Details</button> </a>
     </td>
 
     </tr>
     {{/each}}
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

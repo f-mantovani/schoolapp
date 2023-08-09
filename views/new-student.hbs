@@ -1,0 +1,40 @@
+<h1>Creating New Student</h1>
+
+<div class="container-button">
+  <a href="/student"><button>Back</button></a>
+</div>
+
+<div class="container">
+    <form action="/student/new-student" method="POST" class="book-form">
+      <div class="card">
+        <div class="row">
+          <label for="name">
+            Name
+            <input type="text" name="name" id="name" required>
+          </label>
+        </div>
+        <div class="row">
+          <label for="address">
+            Address
+            <input type="text" name="address" id="author" required>
+          </label>
+        </div>
+        <div class="row">
+          <label for="phoneNumber">
+            Phone Number
+            <input type="text" name="phoneNumber" id="year" required>
+          </label>
+        </div>
+        <div class="row">
+          <label for="email">
+            Email
+            <br>
+            <input type="email" name="email" id="email" required>
+          </label>
+        </div>
+        <div class="row">
+          <button type="submit">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
