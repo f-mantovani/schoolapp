@@ -31,8 +31,29 @@ router.get("/:id/details", (req, res, next) => {
             console.log(err);
             // Tratar erro adequadamente
         });
-
 })
+
+router.get('/:id/edit', (req, res) => {
+    Student.findById(req.params.id)
+      .then((oneStudentToBeEdited) => {
+        console.log(oneStudentToBeEdited)
+        res.render('edit-student', oneStudentToBeEdited)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  })
+
+  router.post('/:id/edit', (req, res) => {
+    const { name, address, phoneNumber, email } = req.body
+    Student.findByIdAndUpdate(req.params.id, { name, address, phoneNumber, email })
+      .then((updatedStudent) => {
+        res.redirect('/student')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
 
 router.post('/:id/delete', (req, res) => {
     console.log(req.params)

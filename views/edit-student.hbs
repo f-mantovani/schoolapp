@@ -1,7 +1,7 @@
-<h1>Editing Book: {{name}}</h1>
+<h1>Editing Student: {{name}}</h1>
 
 
-<form action="/book/{{_id}}/edit" method="POST">
+<form action="/student/{{_id}}/edit" method="POST">
   <div class="container">
     <div class="card">
       <div class="row">
@@ -11,21 +11,21 @@
         </label>
       </div>
       <div class="row">
-        <label for="name">
-          Author
-          <input type="text" name="author" id="author" value="{{author}}">
+        <label for="address">
+          Address
+          <input type="text" name="address" id="adress" value="{{address}}" required>
         </label>
       </div>
       <div class="row">
-        <label for="year">
-          Year
-          <input type="number" name="year" id="year" value="{{year}}">
+        <label for="phoneNumber">
+          Phone Number
+          <input type="text" name="phoneNumber" value="{{phoneNumber}}" required>
         </label>
       </div>
       <div class="row">
         <label for="price">
-          Price
-          <input type="number" name="price" id="price" value="{{price}}" required>
+          Email
+          <input type="email" name="email" id="email" value="{{email}}" required>
         </label>
       </div>
       <div class="row">
