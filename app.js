@@ -37,6 +37,9 @@ app.use('/subject',subjects)
 const students = require('./routes/students.routes')
 app.use('/student',students)
 
+const teachers = require('./routes/teachers.routes')
+app.use('/teacher',teachers)
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

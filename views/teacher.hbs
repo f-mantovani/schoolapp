@@ -1,6 +1,6 @@
 <br>
 
-<h1>List of Students</h1>
+<h1>List of Teachers</h1>
 
 <br>
 <table class="books-table">
@@ -9,23 +9,23 @@
         <th>Phone Number</th>
         <th>Email</th>
     </tr>
-    {{#each allStudents}}
+    {{#each allTeachers}}
 
     <td>{{name}}</td>
     <td>{{phoneNumber}}</td>
     <td>{{email}}</td>
     <td>
-        <a href="/student/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
+        <a href="/teacher/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
     </td>
 
-    <form action="/student/{{_id}}/delete" method="POST">
+    <form action="/teacher/{{_id}}/delete" method="POST">
         <td>
             <button class="delete-button">delete</button>
         </td>
     </form>
 
     <td>
-        <a href="/student/{{_id}}/details"> <button class="row">Details</button> </a>
+        <a href="/teacher/{{_id}}/details"> <button class="row">Details</button> </a>
     </td>
 
     </tr>

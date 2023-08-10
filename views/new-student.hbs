@@ -4,37 +4,48 @@
   <a href="/student"><button>Back</button></a>
 </div>
 
-<div class="container">
-    <form action="/student/new-student" method="POST" class="book-form">
-      <div class="card">
-        <div class="row">
-          <label for="name">
-            Name
-            <input type="text" name="name" id="name" required>
-          </label>
-        </div>
-        <div class="row">
-          <label for="address">
-            Address
-            <input type="text" name="address" id="author" required>
-          </label>
-        </div>
-        <div class="row">
-          <label for="phoneNumber">
-            Phone Number
-            <input type="text" name="phoneNumber" id="year" required>
-          </label>
-        </div>
-        <div class="row">
-          <label for="email">
-            Email
-            <br>
-            <input type="email" name="email" id="email" required>
-          </label>
-        </div>
-        <div class="row">
-          <button type="submit">Create</button>
-        </div>
-      </div>
-    </form>
+<div class="row">
+  <div class="small-12 medium-2 large-2 columns">
+
+
   </div>
+</div>
+</label>
+
+<div class="container">
+  <form action="/student/new-student" method="POST" class="book-form" enctype="multipart/form-data">
+    <div class="card">
+      <div class="row">
+        <label for="name">
+          Name
+          <input type="text" name="name" id="name" required>
+        </label>
+      </div>
+      <div class="row">
+        <label for="address">
+          Address
+          <input type="text" name="address" id="author" required>
+        </label>
+      </div>
+      <div class="row">
+        <label for="phoneNumber">
+          Phone Number
+          <input type="text" name="phoneNumber" id="year" required>
+        </label>
+      </div>
+      <div class="row">
+        <label for="">
+          Profile Picture
+          {{!-- <input type="file" name="picture"> --}}
+        </label>
+      </div>
+      <div class="circle">
+        <img class="profile-pic"
+          src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+      </div>
+      <div class="row">
+        <button type="submit">Create</button>
+      </div>
+    </div>
+  </form>
+</div>
