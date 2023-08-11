@@ -6,7 +6,7 @@ const teacherSchema = new Schema(
     {
         name: {
             type: String,
-            required: true,
+            required: [true, "Name is required"]
         },
         address: {
             type: String
@@ -17,18 +17,22 @@ const teacherSchema = new Schema(
         email: {
             type: String,
             required: [true, "Email is required"],
-            unique: true,
+            //unique: true,
             lowercase: true,
             trim: true
         },
         password: {
             type: String,
-            required: true
+            required: [true, "Password is required"]
+        },
+        type: {
+            type: String,
+            required: [true, "Type is required"]
         },
         profileImg: {
             type: String
         },
-        subjects: [{type:mongoose.Schema.Types.ObjectId, ref:'subject'}] //variable we created is used here
+        subjects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'subject' }] //variable we created is used here
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`    
