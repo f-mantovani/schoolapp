@@ -1,0 +1,53 @@
+<h1>Editing Teacher: {{name}}</h1>
+
+<div class="container-button">
+    <a href="/teacher"><button>Back</button></a>
+</div>
+<br>
+<div class="container-subject">
+
+    <form action="/teacher/{{_id}}/edit" method="POST">
+        <div>
+            <div class="row">
+                <label for="name">
+                    Name
+                    <input type="text" name="name" id="name" value="{{name}}" required>
+                </label>
+            </div>
+            <div class="row">
+                <label for="address">
+                    Address
+                    <input type="text" name="address" id="adress" value="{{address}}" required>
+                </label>
+            </div>
+            <div class="row">
+                <label for="phoneNumber">
+                    Phone Number
+                    <input type="text" name="phoneNumber" value="{{phoneNumber}}" required>
+                </label>
+            </div>
+            <label for="">
+                Profile Picture
+                {{!-- <input type="file" name="picture"> --}}
+            </label>
+            <div class="circle">
+                <img class="profile-pic"
+                    src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+            </div>
+            <div class="row">
+                Subjects
+                <br>
+                <select name="book" id="" multiple>
+                    {{#each subjects}}
+                    <option value="{{_id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            </label>
+            <br>
+            <div class="row">
+                <button type="submit"> Save Changes </button>
+            </div>
+        </div>
+    </form>
+</div>

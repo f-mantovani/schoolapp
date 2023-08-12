@@ -51,15 +51,18 @@ router.post('/:id/edit', (req, res) => {
     })
 })
 
-router.post('/:id/delete', (req, res) => {
+router.post('/:id/delete', (req, res) => { 
   Subject.updateMany(
     { books: req.params.id },
     { $pull: { books: req.params.id } })
     .then((subjectsFound) => {
-      Book.findByIdAndDelete(req.params.id)
       console.log("id: " + req.params.id)
+
+      return Book.findByIdAndDelete(req.params.id)
+
     })
     .then((updatedBooks) => {
+      console.log(updatedBooks)
       res.redirect('/book')
     })
     .catch(err => {
