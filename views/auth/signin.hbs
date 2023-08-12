@@ -1,0 +1,97 @@
+<style>
+    form {
+        margin: 30px auto;
+        width: 380px;
+    }
+
+    form label {
+        color: #666;
+        display: inline-block;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    form input,
+    form button {
+        box-sizing: border-box;
+        font-size: 14px;
+        outline: 0;
+        padding: 4px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form button {
+        background: #43e68c;
+        border: 1px solid #43e679;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.3s ease background;
+        width: 100%;
+    }
+
+    form button:hover {
+        background: #fff;
+        color: #43e68a;
+        transition: 0.3s ease background;
+    }
+
+    .error {
+        background: #f02b63;
+        box-sizing: border-box;
+        color: #ffffff;
+        margin: 20px auto;
+        padding: 20px;
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 40px;
+    }
+</style>
+
+
+<body>
+    <div id="form">
+        <h2>Sign in</h2>
+        <form action="/signin" method="POST">
+
+            <label> Name
+                <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+
+            <label> Email
+                <input type="email" name="email" placeholder="email" />
+            </label>
+
+
+            <label> Password
+                <input type="password" name="password" placeholder="********" />
+            </label>
+
+            <label for="type-select">Choose a user type:</label>
+
+            <select name="type" id="user-type">
+                <option value="">--Please choose an option--</option>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+            <br>
+            <br>
+
+            <button type="submit">submit</button>
+
+            {{!-- error message will be added here --}}
+            {{#if errorMessage}}
+            <p class="error">{{errorMessage}}</p>
+            {{/if}}
+        </form>
+    </div>

@@ -3,7 +3,9 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const classeSchema = new Schema(
     {
-        student: [{ type: mongoose.Schema.Types.ObjectId, ref: 'student' }],
+        student: { 
+            type: String 
+        },
         subject: [{ type: mongoose.Schema.Types.ObjectId, ref: 'subject' }],
         classesPerWeek: {
             type: Number
