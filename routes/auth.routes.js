@@ -4,10 +4,6 @@ const bcryptjs = require("bcryptjs");
 const mongoose = require('mongoose')
 const saltRounds = 10;
 
-router.get('/profile',(req,res)=>{
-    res.render('users/profile')
-})
-
 router.get("/signup", (req, res) => {
     res.render('auth/signup')
 })
@@ -31,15 +27,15 @@ router.post("/signup", (req, res) => {
             bcryptjs.hash(password, salt)
                 .then((hashedPassword) => {
 
-                    let myModel;
+                    let Mymodel;
 
                     if (type === "Teacher") {
-                        myModel = require('../models/Teacher.model');
+                        Mymodel = require('../models/Teacher.model');
                     } else {
-                        myModel = require('../models/Student.model');
+                        Mymodel = require('../models/Student.model');
                     }
 
-                    return myModel.create({ name, email, password: hashedPassword, type })
+                    return Mymodel.create({ name, email, password: hashedPassword, type })
                 })
                 .then(() => {
                     res.redirect('/profile')
@@ -69,32 +65,46 @@ router.get("/signin", (req, res) => {
 router.post("/signin", (req, res) => {    
     const {  name, email, password, type } = req.body
 
+    console.log(req.session)
+
+
     if ( !name || !email || !password ) {
         res.render('auth/signin',{errorMessage: "All the fields are mandatory. Please, fill it in."})
         return
     }
 
-    let myModel;
+    let Mymodel;
 
     if (type==="Teacher") {
-        myModel = require('../models/Teacher.model');
+        Mymodel = require('../models/Teacher.model');
     } else {
-        myModel = require('../models/Student.model');
+        Mymodel = require('../models/Student.model');
     }
 
-    myModel.findOne({ email })
-    .then(user => {
+    Mymodel.findOne({ email:email })
+    .then((user) => {
+      console.log(email)
+      console.log(user)
       if (!user) {
         res.render('auth/signin', { errorMessage: 'Email is not registered. Try with other email.' });
         return;
       } else if (bcryptjs.compareSync(password, user.password)) {
-        res.render('users/profile', { user });
+        //res.render('users/profile', { user });
+        //rendering with session
+        req.session.currentUser = user
+        //console.log(req.session)
+        res.redirect('/profile')
       } else {
         res.render('auth/signin', { errorMessage: 'Incorrect password.' });
       }
     })
-    .catch(error => next(error));
+    .catch(err => {
+        console.log(err)
+    });
 });
 
-
+router.get('/profile',(req,res)=>{
+    //console.log(req.session)
+    res.render('users/profile',{ currentUser:req.session.currentUser })
+})
 module.exports = router

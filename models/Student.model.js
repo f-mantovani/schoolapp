@@ -33,7 +33,6 @@ const studentSchema = new Schema(
         },
         type: {
             type: String,
-            required: [true, "Type is required"]
         },
         profileImg: {
             type: String
