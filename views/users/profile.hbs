@@ -1,3 +1,25 @@
-<h1>
-    You are in your profile
-</h1>
+<body>
+    {{#if user}}
+    <div class="profile-card">
+        <div>{{user.type}}</div>
+        <div class="circle-picture">
+            <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+                alt="profile photo">
+        </div>
+
+        <div class="profile-name">{{user.name}}</div>
+        <div class="profile-email">{{user.email}}</div>
+        <div class="profile-links">
+            <a href="https://www.linkedin.com/">LinkedIn</a> |
+            <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+    </div>
+    {{else}}
+    <div class="profile-card">
+        <p>Sorry, you are not logged!</p>        
+    </div>
+
+    {{/if}}
+</body>
+
+</html>

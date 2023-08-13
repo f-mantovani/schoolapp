@@ -58,32 +58,34 @@
     }
 </style>
 
-
+<br>
+<br>
 <body>
-    <div id="form">
+    <div class="container-subject" id="form">
         <h2>Sign in</h2>
         <form action="/signin" method="POST">
 
             <label> Name
-                <input type="text" name="name" placeholder="Your full name" required />
+                <input type="text" name="name" placeholder="Your full name" />
             </label>
 
             <label> Email
-                <input type="email" name="email" placeholder="email" />
+                <input type="email" name="email" placeholder="Your email" />
             </label>
 
 
             <label> Password
-                <input type="password" name="password" placeholder="********" />
+                <input type="password" name="password" placeholder="Your password" />
             </label>
 
-            <label for="type-select">Choose a user type:</label>
+            {{!-- <label for="type-select">Choose a user type:</label>
 
             <select name="type" id="user-type">
                 <option value="">--Please choose an option--</option>
                 <option value="Student">Student</option>
                 <option value="Teacher">Teacher</option>
             </select>
+             --}}
             <br>
             <br>
 

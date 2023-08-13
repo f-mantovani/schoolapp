@@ -31,15 +31,15 @@ router.post("/signup", (req, res) => {
             bcryptjs.hash(password, salt)
                 .then((hashedPassword) => {
 
-                    let Mymodel;
+                    let myModel;
 
                     if (type === "Teacher") {
-                        Mymodel = require('../models/Teacher.model');
+                        myModel = require('../models/Teacher.model');
                     } else {
-                        Mymodel = require('../models/Student.model');
+                        myModel = require('../models/Student.model');
                     }
 
-                    return Mymodel.create({ name, email, password: hashedPassword, type })
+                    return myModel.create({ name, email, password: hashedPassword, type })
                 })
                 .then(() => {
                     res.redirect('/profile')
@@ -69,26 +69,32 @@ router.get("/signin", (req, res) => {
 router.post("/signin", (req, res) => {    
     const {  name, email, password, type } = req.body
 
-    if ( !name || !email || !password || !type) {
-        res.render('auth/sigin',{errorMessage: "All the fields are mandatory. Please, fill it in."})
+    if ( !name || !email || !password ) {
+        res.render('auth/signin',{errorMessage: "All the fields are mandatory. Please, fill it in."})
         return
     }
 
-    let Mymodel;
+    let myModel;
 
     if (type==="Teacher") {
-       Mymodel = require('../models/Teacher.model');
+        myModel = require('../models/Teacher.model');
     } else {
-       Mymodel = require('../models/Student.model');
+        myModel = require('../models/Student.model');
     }
 
-    console.log("-----------------------------")
-    console.log(Mymodel)
-
-    .catch((err)=>{
-        console.log(err)
+    myModel.findOne({ email })
+    .then(user => {
+      if (!user) {
+        res.render('auth/signin', { errorMessage: 'Email is not registered. Try with other email.' });
+        return;
+      } else if (bcryptjs.compareSync(password, user.password)) {
+        res.render('users/profile', { user });
+      } else {
+        res.render('auth/signin', { errorMessage: 'Incorrect password.' });
+      }
     })
+    .catch(error => next(error));
+});
 
-})
 
 module.exports = router

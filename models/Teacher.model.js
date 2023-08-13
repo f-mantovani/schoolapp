@@ -22,6 +22,12 @@ const teacherSchema = new Schema(
             lowercase: true,
             trim: true
         },
+        linkedin: {
+            type: String
+        },
+        instagram: {
+            type: String
+        },
         password: {
             type: String,
             required: [true, "Password is required"]
