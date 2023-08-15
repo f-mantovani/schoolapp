@@ -37,7 +37,8 @@ router.post("/signup", (req, res) => {
 
                     return Mymodel.create({ name, email, password: hashedPassword, type })
                 })
-                .then(() => {
+                .then((user) => {
+                    req.session.currentUser = user
                     res.redirect('/profile')
                 })
                 .catch((err) => {
