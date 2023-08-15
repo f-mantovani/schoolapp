@@ -1,0 +1,73 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #928f8f;
+    }
+
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+
+    }
+
+    .container {
+
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #d1c9c9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+.gallery{
+    display: flex;
+     float: left;
+	  width:30%;
+      margin-left: 2em;
+   
+    
+	
+}
+
+
+    .btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+    
+    }
+
+    .upload {
+        margin-left: 4rem;
+    }
+</style>
+<h1>All Students</h1>
+{{#each allStudents}}
+<main class="gallery">
+<form action="/student" method="POST" enctype="multipart/form-data"></form>
+<div class="main">
+    <div class="profile-card">
+        <div class="container">
+            
+            <h2>{{name}}</h2>
+            <h2>{{email}}</h2>
+            <br>
+            <br>
+            <div>
+                <a class="btn" href="https://www.linkedin.com/">LinkedIn</a> |
+              <a class="btn" href="https://www.instagram.com/">Instagram</a>
+
+                <br>
+                <br>
+      
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+{{/each}}

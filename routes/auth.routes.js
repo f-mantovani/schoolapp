@@ -3,6 +3,8 @@ const router = express.Router();
 const bcryptjs = require("bcryptjs");
 const mongoose = require('mongoose')
 const saltRounds = 10;
+const Student = require('../models/Student.model');
+const Teacher = require('../models/Teacher.model');
 
 router.get("/signup", (req, res) => {
     res.render('auth/signup')
@@ -104,8 +106,42 @@ router.post("/signin", (req, res) => {
     });
 });
 
+router.post('/logout', (req, res, next) => {
+    req.session.destroy(err => {    
+      if (err) next(err);
+      res.redirect('/');
+    });
+  });
+
 router.get('/profile',(req,res)=>{
     //console.log(req.session)
     res.render('users/profile',{ currentUser:req.session.currentUser })
 })
+
+router.get('/complete',(req,res)=>{ 
+
+    const type = req.session.currentUser.type
+    const saveId = req.session.currentUser._id
+
+
+    if (type==="Student") {
+        res.render('users/complete-student',{ currentUser:req.session.currentUser })
+    } else if (type==="Teacher"){
+        res.render('users/complete-teacher',{ currentUser:req.session.currentUser })
+    } else {
+        res.render('users/admin')
+    }       
+})
+
+router.post('/completeteacher/:id/edit', (req, res) => {
+    const { address, phoneNumber } = req.body
+    Teacher.findByIdAndUpdate(req.params.id, { address, phoneNumber })
+      .then((updateTeacher) => {
+        res.redirect('/profile')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
+
 module.exports = router
