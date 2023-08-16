@@ -6,31 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>{{title}}</title>
+  <title>School App</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
-<body>  
+<body>
 
   <img src="../public/images/teste.jpg" alt="">
   <ul class="topnav">
+
     <li><a class="active" href="/">Home</a></li>
-    {{!-- {{#if (currentUser.type="Teacher")}} --}}
-       <li><a href="/teacher">Teacher</a></li>
-    {{!-- {{/if}} --}}
-    {{!-- {{#if (currentUser.type="Student")}} --}}
-       <li><a href="/student">Student</a></li>
-    {{!-- {{/if}} --}}
+
+    {{#if isTeacher}}
     <li><a href="/subject">Subject</a></li>
-    <li><a href="/book">Book</a></li>
+    <li><a href="/book">Books</a></li>
+    {{/if}}
+
+    {{#if isStudent}}
+    <li><a href="/book">Books</a></li>
+    {{/if}}
+
+    {{#if isAdmin}}
+    <li><a href="/subject">Subject</a></li>
+    <li><a href="/book">Books</a></li>
+    <li><a href="/teacher">Teacher</a></li>
+    <li><a href="/student">Student</a></li>
+    {{/if}}
     {{!-- <li><a href="/class">Class</a></li> --}}
+
     <li><a href="/gallery">Photo Gallery</a></li>
+
+    {{#if currentUser}}
+ 
+    {{!-- <form id="logout-form" action="/logout" method="POST">
+      <li class="right">Log Out</li>
+    </form> --}}
+    {{else}}
     <li class="right"><a href="/signup">Sign up</a></li>
     <li class="right"><a href="/signin">Sign in</a></li>
+    {{/if}}
+
+
   </ul>
 
   {{{body}}}
- 
+
   <script src="/js/script.js"></script>
 </body>
 

@@ -27,6 +27,23 @@ const projectName = "schoolapp";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
+app.use((req,res,next)=>{
+    app.locals.currentUser=req.session.currentUser
+
+    app.locals.isTeacher=false
+    app.locals.isStudent=false
+    app.locals.isAdmin=false
+    if (req.session.currentUser?.type==="Teacher"){
+        app.locals.isTeacher=true    
+    } else if (req.session.currentUser?.type==="Student"){
+        app.locals.isStudent=true    
+    } else if (req.session.currentUser?.type==="Admin"){ 
+        app.locals.isAdmin=true
+    }
+    
+    next()
+})
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);

@@ -97,6 +97,7 @@ router.post("/signin", (req, res) => {
         req.session.currentUser = user
         //console.log(req.session)
         res.redirect('/profile')
+        // res.redirect("/", {currentUser:req.session.currentUser});
       } else {
         res.render('auth/signin', { errorMessage: 'Incorrect password.' });
       }
@@ -120,14 +121,18 @@ router.get('/profile',(req,res)=>{
 
 router.get('/complete',(req,res)=>{ 
 
-    const type = req.session.currentUser.type
-    const saveId = req.session.currentUser._id
-
-
-    if (type==="Student") {
-        res.render('users/complete-student',{ currentUser:req.session.currentUser })
-    } else if (type==="Teacher"){
-        res.render('users/complete-teacher',{ currentUser:req.session.currentUser })
+    const userId = req.session.currentUser._id
+    
+    if (req.session.currentUser.type==="Student") {
+        res.render('users/complete-student',{ currentUser:req.session.currentUser})
+        
+    } else if (req.session.currentUser.type==="Teacher"){        
+        Teacher.findById(userId)
+        .then((currentUser)=>{
+            res.render('users/complete-teacher',{ currentUser})
+        })
+        
+        
     } else {
         res.render('users/admin')
     }       
