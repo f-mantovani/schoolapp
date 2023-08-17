@@ -1,74 +1,47 @@
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #928f8f;
-    }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-item {
+  width: 300px;
+}
 
 
-    h1 {
-        text-align: center;
-        font-size: 50px;
+.gallery-item img {
+  width: 100%;
+  object-fit: cover;
+}
 
-    }
+h1 {
+  text-align: center;
+}
+.gallery-item img {
+  width: 300px;
+  height: 200px;
+  
+  object-fit: cover;
+}
 
-    .container {
-        padding: 20px;
-        background-color: #d1c9c9;
-
-    }
-
-    .gallery {
-        display: flex;
-        float: left;
-        width: 20%;
-        margin-left: 3em;
-
-
-
-    }
-
-
-    .btn {
-        display: inline-block;
-        background-color: #008000;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-
-    }
-
-    .upload {
-        margin-left: 4rem;
-    }
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
 </style>
 
-{{#each allStudents}}
-<main class="gallery">
-    <form action="/student" method="POST" enctype="multipart/form-data"></form>
-    <div class="main">
-        <div class="profile-card">
-            <div class="container">
-                <div class="circle-picture">
-                    <img class="profile-pic" src={{profileImg}}>
-                </div>
-                <h2>{{name}}</h2>
-                <h2>{{email}}</h2>
-                <br>
-                <br>
-                <div>
+<h1>Galeria de Fotos</h1>
 
-                    <div class="social-icons">
-                        <a href="link_para_seu_linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="link_para_seu_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <br>
-                    <br>
+<div class="gallery">
 
-                </div>
-            </div>
-        </div>
+  {{#each allStudents}}
+    <div class="gallery-item">
+       <img src={{profileImg}}>
+    <br>
+    {{name}}
     </div>
-</main>
-{{/each}}
+    
+  {{/each}}
+
+</div>
