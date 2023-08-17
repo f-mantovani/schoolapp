@@ -79,12 +79,13 @@ router.post("/signin", (req, res) => {
 
     let Mymodel;
 
-    if (type==="Teacher") {
+    if (type==="Teacher" || type==="Admin") {
         Mymodel = require('../models/Teacher.model');
     } else {
         Mymodel = require('../models/Student.model');
     }
 
+    console.log(Mymodel)
     Mymodel.findOne({ email:email })
     .then((user) => {
       console.log(email)
@@ -131,9 +132,7 @@ router.get('/complete',(req,res)=>{
         Teacher.findById(userId)
         .then((currentUser)=>{
             res.render('users/complete-teacher',{ currentUser})
-        })
-        
-        
+        })                
     } else {
         res.render('users/admin')
     }       

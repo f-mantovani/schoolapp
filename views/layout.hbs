@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>School App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
@@ -42,17 +43,15 @@
     <li class="right"><a href="/signup">Sign up</a></li>
     <li class="right"><a href="/signin">Sign in</a></li>
     {{/if}}
-
-
   </ul>
 
-  {{#if currentUser}}
-    <form id="logout-form" action="/logout" method="POST">
-      Welcome {{ currentUser.name }} <button>Log Out</button>            
-    </form>
-    
-     <a href="/profile"><button>Profile</button> </a>
-            
+  {{#if currentUser}}    
+    <div class="top-message">
+        <a href="/profile" >Profile</a>
+        <form id="logout-form" action="/logout" method="POST">
+          Welcome {{ currentUser.name }} <button>Log Out</button>           
+        </form>            
+    </div>
   {{/if}}
 
 

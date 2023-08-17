@@ -1,11 +1,11 @@
-<h1>Editing Teacher: {{name}}</h1>
-
-<div class="container-button">
-    <a href="/teacher"><button>Back</button></a>
+<div class="top-message">
+    <h1>Editing Teacher: {{name}}</h1>
 </div>
 <br>
 <div class="container-subject">
-
+    <div class="container-button">
+        <a href="/teacher"><button>Back</button></a>
+    </div>
     <form action="/teacher/{{_id}}/edit" method="POST">
         <div>
             <div class="row">
@@ -31,8 +31,7 @@
                 {{!-- <input type="file" name="picture"> --}}
             </label>
             <div class="circle-picture">
-                <img class="profile-pic"
-                    src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                <img class="profile-pic" src={{profileImg}}>
             </div>
             <div class="row">
                 Subjects
@@ -45,7 +44,7 @@
             </div>
             </label>
             <br>
-            <div class="row">
+            <div class="row container-button">
                 <button type="submit"> Save Changes </button>
             </div>
         </div>

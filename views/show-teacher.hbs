@@ -1,61 +1,44 @@
-<h1>Showing teacher: {{name}}</h1>
-
+<div class="top-message">
+    <h1>Showing Teacher: {{name}}</h1>
+</div>
 <div class="container">
     <div class="card-show">
-        <div class="row">
-            <label for="address">
-                Address:
-                <br>
-                <br>
-                {{address}}
-            </label>
-            <br>
-            <br>
+        <div class="row-profile">
+            <label for="address">Address:</label>
+            {{address}}
+            <br><br>
         </div>
-        <div class="row">
-            <label for="phoneNumber">
-                Phone Number:
-                <br>
-                <br>
-                {{phoneNumber}}
-            </label>
-            <br>
-            <br>
+        <div class="row-profile">
+            <label for="phoneNumber">Phone Number:</label>
+            {{phoneNumber}}
+            <br><br>
         </div>
-        <div class="row">
-            <label for="email">
-                Email:
-                <br>
-                <br>
-                {{email}}
-            </label>
-            <br>
-            <br>
+        <div class="row-profile">
+            <label for="email"> Email:</label>
+            {{email}}
+            <br><br>
         </div>
-        <label for="books">
-            Subjects For This Teacher:
-            <br>
-            <br>
-            <table>
-                {{#each subjects}}
-                <tr>
-                    <td>{{name}}</td>
-                    <td> | Price Per Hour --- $ {{pricePerHour}}</td>
-                </tr>
-                {{/each}}
-            </table>
-        </label>
+        <div class="row-profile">
+            <label for="books">
+                Subjects For This Teacher:
+                <br>
+                <br>
+                <table>
+                    {{#each subjects}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td> | Price Per Hour --- $ {{pricePerHour}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </label>
+        </div>
         <br>
-        <label for="">
-            Profile Picture
-            {{!-- <input type="file" name="picture"> --}}
-        </label>
         <div class="circle-picture">
-            <img class="profile-pic"
-                src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+            <img class="profile-pic" src={{profileImg}}>
         </div>
-        <div class="row">
-            <a href="/teacher"><button>Back</button></a>
+        <div class="row container-button">
+            <a href="/student"><button>Back</button></a>
         </div>
     </div>
 </div>

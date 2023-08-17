@@ -21,9 +21,16 @@ router.post("/new-book", (req, res) => {
 })
 
 router.get("/", (req, res, next) => {
+
+  let superUser = false;
+
+  if (req.session.currentUser?.type==="Admin"){
+     superUser = true;
+  }
+
   Book.find()
     .then((allBooks) => {
-      res.render("book", { allBooks });
+      res.render("book", { allBooks, superUser });
     })
     .catch((err) => {
       console.log(err)

@@ -1,49 +1,33 @@
-<h1>Showing Student: {{name}}</h1>
-
-<div class="container">
-    <div class="card-show">
-        <div class="row">
-            <label for="address">
-                Address:
-                <br>
-                <br>
-                {{address}}
-            </label>
-            <br>
-            <br>
-        </div>
-        <div class="row">
-            <label for="phoneNumber">
-                Phone Number:
-                <br>
-                <br>
-                {{phoneNumber}}
-            </label>
-            <br>
-            <br>
-        </div>
-        <div class="row">
-            <label for="email">
-                Email:
-                <br>
-                <br>
-                {{email}}
-            </label>
-            <br>
-            <br>
-        </div>
-        <label for="">
-            Profile Picture
-            {{!-- <input type="file" name="picture"> --}}
-        </label>
-        <div class="circle-picture">
-            <img class="profile-pic"
-                src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
-        </div>
-        <div class="row">
-            <a href="/student"><button>Back</button></a>
-        </div>
-
-    </div>
+<div class="top-message">
+   <h1>Showing Student: {{name}}</h1>    
 </div>
-</form>
+
+<div class="card-show">
+
+    <div class="row-profile">
+        <label for=""> Address: </label>
+        {{address}}
+        <br><br>
+    </div>
+
+    <div class="row-profile">
+        <label for="">Phone Number:</label>
+        {{phoneNumber}}
+        <br><br>
+    </div>
+
+    <div class="row-profile">
+        <label for="">Email:</label>
+        {{email}}
+        <br><br>
+    </div>
+
+    <div class="circle-picture">
+        <img class="profile-pic" src={{profileImg}}>
+    </div>
+
+    <div class="row container-button">
+        <a href="/student"><button>Back</button></a>
+    </div>
+
+</div>

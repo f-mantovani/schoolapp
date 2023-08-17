@@ -1,88 +1,111 @@
- <style>
-    {{!-- body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background-color: #f2f2f2;
-    } --}}
-    .profile-card {
-      max-width: 400px;
-      width: 100%;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+<style>
+  {
+      {
+      !-- body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f2f2f2;
+      }
+
+      --
     }
-    .profile {
-      text-align: center;
-    }
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    .profile h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-    .profile p {
-      font-size: 16px;
-      margin: 5px 0;
-    }
-    .social-icons {
-      margin-top: 20px;
-    }
-    .social-icons a {
-      display: inline-block;
-      margin-right: 10px;
-      color: #333;
-      text-decoration: none;
-    }
-    .social-icons i {
-      font-size: 24px;
-    }
-    .complete-profile {
-      font-size: 14px;
-      text-align: left;
-      margin-top: 5px;
-    }
-  </style>
+  }
+
+  .profile-card {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile {
+    text-align: center;
+  }
+
+  .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  .profile h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .profile p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .social-icons {
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .social-icons i {
+    font-size: 24px;
+  }
+
+  .complete-profile {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 5px;
+  }
+</style>
+
 <body>
-    {{#if currentUser}}
-    <div class="profile-card">
-        
-        <p class="complete-profile"><a href="/complete">Edit Profile</a></p>
-        <div>{{currentUser.type}}</div>
+  {{#if currentUser}}
+  <div class="profile-card">
 
-        
-        <div class="circle-picture">
-            {{#if currentUser.profileImg}}
-            <img src={{currentUser.profileImg}} alt="profile photo">
-            {{else}}
-            <img src={{defaultProfileImage}} alt="profile photo">
-            {{/if}}
-        </div>
+    <a href="/complete"><button class="edit-button">Edit Profile</button> </a>  
    
-        <div class="profile-name">{{currentUser.name}}</div>
-        <div class="profile-email">{{currentUser.email}}</div>
-        <div class="profile-links">
-            <div class="social-icons"></div>
-            {{!-- <a href={{linkedin}} target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href={{instagram}} target="_blank"><i class="fab fa-instagram"></i></a> --}}
-            linkedin | instagram
-        </div>
-    </div>
-    {{else}}
-    <div class="profile-card">
-        <p>Sorry, you are not logged!</p>
+    <p><div>{{currentUser.type}}</div></p>
+
+
+    {{!-- <div class="circle-picture">
+      {{#if currentUser.profileImg}}
+      <img src={{currentUser.profileImg}} alt="profile photo">
+      {{else}}
+      <img src={{defaultProfileImage}} alt="profile photo">
+      {{/if}}
+    </div> --}}
+
+    <div class="circle-picture">
+      <img src={{currentUser.profileImg}} alt="profile photo">
     </div>
 
-    {{/if}}
+    <div class="profile-name">{{currentUser.name}}</div>
+    <div class="profile-email">{{currentUser.email}}</div>
+    <div class="profile-links">
+  
+      <div class="social-icons">
+        <a href="link_para_seu_linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="link_para_seu_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      
+    </div>
+  </div>
+  {{else}}
+  <div class="profile-card">
+    <p>Sorry, you are not logged!</p>
+  </div>
+
+  {{/if}}
 </body>
 
 </html>
