@@ -1,0 +1,20 @@
+{
+  "_id": {
+    "$oid": "64dd2bec662cbf80090df89a"
+  },
+  "name": "Super User",
+  "email": "super@gmail.com",
+  "password": "$2a$10$g877ciIgoq8x3m2QQVziie8zowrz/VMbECPwUYeG51xtifb2e3mpW",
+  "type": "Admin",
+  "createdAt": {
+    "$date": "2023-08-16T20:05:00.576Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-16T20:05:00.576Z"
+  },
+  "__v": 0
+}
+
+
+
+//Super123 - password

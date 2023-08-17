@@ -43,28 +43,30 @@
         margin-left: 4rem;
     }
 </style>
-<h1>All Students</h1>
+
 {{#each allStudents}}
 <main class="gallery">
-<form action="/student" method="POST" enctype="multipart/form-data"></form>
-<div class="main">
-    <div class="profile-card">
-        <div class="container">
-            
-            <h2>{{name}}</h2>
-            <h2>{{email}}</h2>
-            <br>
-            <br>
-            <div>
-                <a class="btn" href="https://www.linkedin.com/">LinkedIn</a> |
-              <a class="btn" href="https://www.instagram.com/">Instagram</a>
+    <form action="/student" method="POST" enctype="multipart/form-data"></form>
+    <div class="main">
+        <div class="profile-card">
+            <div class="container">
+                <div class="circle-picture">
+                    <img class="profile-pic" src={{profileImg}}>
+                </div>
+                <h2>{{name}}</h2>
+                <h2>{{email}}</h2>
+                <br>
+                <br>
+                <div>
+                    <a class="btn" href="https://www.linkedin.com/">LinkedIn</a> |
+                    <a class="btn" href="https://www.instagram.com/">Instagram</a>
 
-                <br>
-                <br>
-      
+                    <br>
+                    <br>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 </main>
 {{/each}}

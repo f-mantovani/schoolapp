@@ -1,0 +1,37 @@
+<h1>Editing User: {{currentUser.name}}</h1>
+
+<form action="/completestudent/{{currentUser._id}}/edit" method="POST" enctype="multipart/form-data">
+  <div class="container">
+    <div class="card">
+      <div class="row">
+        <label for="address">
+          Address
+          <input type="text" name="address" id="adress" value="{{currentUser.address}}">
+        </label>
+      </div>
+      <div class="row">
+        <label for="phoneNumber">
+          Phone Number
+          <input type="text" name="phoneNumber" value="{{currentUser.phoneNumber}}">
+        </label>
+      </div>
+      <label for="">
+        Profile Picture
+        <input type="file" name="profileImg">
+      </label>
+      <br>
+      <div class="circle-picture">
+        <img class="profile-pic"
+          src={{currentUser.profileImg}}>
+      </div>
+      <div>
+        <button type="submit"> Save Changes </button>
+      </div>
+      <br>
+      <div class="row">
+        <a href="/profile"><button type="submit">Back</B> </button></a>
+      </div>
+
+    </div>
+  </div>
+</form>

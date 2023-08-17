@@ -5,13 +5,14 @@ const mongoose = require('mongoose')
 const saltRounds = 10;
 const Student = require('../models/Student.model');
 const Teacher = require('../models/Teacher.model');
+const fileUploader = require('../config/cloudinary.config')
 
 router.get("/signup", (req, res) => {
     res.render('auth/signup')
 })
 
 router.post("/signup", (req, res) => {
-    const { name, email, password, type } = req.body
+    const { name, email, password, type, profileImg= "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg" } = req.body
 
     if (!name || !email || !password || !type){
         res.render('auth/signup',{errorMessage: "All the fields are mandatory. Please, fill it in."})
@@ -37,7 +38,7 @@ router.post("/signup", (req, res) => {
                         Mymodel = require('../models/Student.model');
                     }
 
-                    return Mymodel.create({ name, email, password: hashedPassword, type })
+                    return Mymodel.create({ name, email, password: hashedPassword, type, profileImg })
                 })
                 .then((user) => {
                     req.session.currentUser = user
@@ -66,7 +67,7 @@ router.get("/signin", (req, res) => {
 })
 
 router.post("/signin", (req, res) => {    
-    const {  name, email, password, type } = req.body
+    const {  name, email, password, type, } = req.body
 
     console.log(req.session)
 
@@ -124,7 +125,7 @@ router.get('/complete',(req,res)=>{
     const userId = req.session.currentUser._id
     
     if (req.session.currentUser.type==="Student") {
-        res.render('users/complete-student',{ currentUser:req.session.currentUser})
+        res.render('users/complete-student',{currentUser:req.session.currentUser})
         
     } else if (req.session.currentUser.type==="Teacher"){        
         Teacher.findById(userId)
@@ -138,10 +139,41 @@ router.get('/complete',(req,res)=>{
     }       
 })
 
-router.post('/completeteacher/:id/edit', (req, res) => {
+router.post('/completeteacher/:id/edit',fileUploader.single('profileImg'), (req, res) => {
     const { address, phoneNumber } = req.body
-    Teacher.findByIdAndUpdate(req.params.id, { address, phoneNumber })
-      .then((updateTeacher) => {
+    
+    let profileImg;
+
+    if(req.file){
+        profileImg = req.file.path
+    } else {
+        profileImg = undefined
+    }
+
+    Teacher.findByIdAndUpdate(req.params.id, { address, phoneNumber, profileImg }, {new:true})
+      .then((updatedTeacher) => {
+        req.session.currentUser = updatedTeacher
+        res.redirect('/profile')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
+
+  router.post('/completestudent/:id/edit',fileUploader.single('profileImg'), (req, res) => {
+    const { address, phoneNumber } = req.body
+    
+    let profileImg;
+
+    if(req.file){
+        profileImg = req.file.path
+    } else {
+        profileImg = undefined
+    }
+
+    Student.findByIdAndUpdate(req.params.id, { address, phoneNumber, profileImg }, {new:true})
+      .then((updatedTeacher) => {
+        req.session.currentUser = updatedTeacher
         res.redirect('/profile')
       })
       .catch(err => {

@@ -55,13 +55,19 @@
 <body>
     {{#if currentUser}}
     <div class="profile-card">
+        
         <p class="complete-profile"><a href="/complete">Edit Profile</a></p>
         <div>{{currentUser.type}}</div>
-        <div class="circle-picture">
-            <img src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
-                alt="profile photo">
-        </div>
+
         
+        <div class="circle-picture">
+            {{#if currentUser.profileImg}}
+            <img src={{currentUser.profileImg}} alt="profile photo">
+            {{else}}
+            <img src={{defaultProfileImage}} alt="profile photo">
+            {{/if}}
+        </div>
+   
         <div class="profile-name">{{currentUser.name}}</div>
         <div class="profile-email">{{currentUser.email}}</div>
         <div class="profile-links">
@@ -70,9 +76,6 @@
             <a href={{instagram}} target="_blank"><i class="fab fa-instagram"></i></a> --}}
             linkedin | instagram
         </div>
-        <form id="logout-form" action="/logout" method="POST">
-            <button>Logout</button>
-        </form>
     </div>
     {{else}}
     <div class="profile-card">
