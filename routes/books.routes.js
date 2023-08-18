@@ -15,7 +15,7 @@ router.post("/new-book", (req, res) => {
     .then((newBook) => {
       res.redirect("/book")
     })
-    .catch((err) => {
+    .catch((err) => { 
       console.log(err)
     })
 })

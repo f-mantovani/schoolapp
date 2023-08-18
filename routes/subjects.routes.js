@@ -13,7 +13,7 @@ router.get("/new-subject", (req, res) => {
             console.log(err)
         })
 })
-
+ 
 router.post("/new-subject", (req, res) => {
     const { name, pricePerHour } = req.body
     const books = req.body.book
@@ -135,9 +135,16 @@ router.post('/:id/delete', (req, res) => {
 })
 
 router.get("/", (req, res, next) => {
+
+    let superUser = false;
+
+    if (req.session.currentUser?.type==="Admin"){
+       superUser = true;
+    }
+
     Subject.find()
         .then((allSubjects) => {
-            res.render("subject", { allSubjects });
+            res.render("subject", { allSubjects, superUser });
         })
         .catch((err) => {
             console.log(err)

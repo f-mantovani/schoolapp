@@ -2,6 +2,7 @@
     <h1>List of Subjects</h1>
 </div>
 
+{{#if superUser}}
 <div>
     <a href="/subject/new-subject">New Subject</a>
 </div>
@@ -17,19 +18,40 @@
     <td class="price">$ {{pricePerHour}}</td>
 
     <td>
-        <a href="/subject/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>        
+        <a href="/subject/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
     </td>
-       
+
     <form action="/subject/{{_id}}/delete" method="POST">
-       <td>
-           <button class="delete-button">delete</button>
-       </td>
+        <td>
+            <button class="delete-button">delete</button>
+        </td>
     </form>
 
     <td>
-        <a href="/subject/{{_id}}/details"> <button class="details-button">Details</button> </a>        
+        <a href="/subject/{{_id}}/details"> <button class="details-button">Details</button> </a>
     </td>
 
     </tr>
     {{/each}}
 </table>
+{{else}}
+<br>
+<table class="books-table">
+    <tr>
+        <th>Name</th>
+        <th>Price Per Hour</th>
+    </tr>
+    {{#each allSubjects}}
+
+    <td>{{name}}</td>
+    <td class="price">$ {{pricePerHour}}</td>
+
+    <td>
+        <a href="/subject/{{_id}}/details"> <button class="details-button">Details</button> </a>
+    </td>
+
+    </tr>
+    {{/each}}
+</table>
+
+{{/if}}

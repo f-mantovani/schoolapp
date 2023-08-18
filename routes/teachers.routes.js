@@ -45,9 +45,17 @@ router.post('/:id/delete', (req, res) => {
 })
 
 router.get("/", (req, res) => {
+
+  let superUser = false;
+
+  if (req.session.currentUser?.type==="Admin"){
+     superUser = true;
+  }
+
+
     Teacher.find()
         .then((allTeachers) => {
-            res.render('teacher', { allTeachers })
+            res.render('teacher', { allTeachers, superUser })
         })
         .catch((err) => {
             console.log(err)
