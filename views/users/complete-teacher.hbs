@@ -1,8 +1,13 @@
-<h1>Editing User: {{currentUser.name}}</h1>
+<div class="top-message">
+  <h1>Editing User: {{currentUser.name}}</h1>
+</div>
 
 <form action="/completeteacher/{{currentUser._id}}/edit" method="POST" enctype="multipart/form-data">
   <div class="container">
     <div class="card">
+      <div class="container-button">
+        <a href="/profile"><button type="submit">Back</B> </button></a>
+      </div>
       <div class="row">
         <label for="address">
           Address
@@ -23,14 +28,10 @@
       <div class="circle-picture">
         <img class="profile-pic" src={{currentUser.profileImg}}>
       </div>
-      <div>
+      <div class="container-button">
         <button type="submit"> Save Changes </button>
       </div>
       <br>
-      <div class="row">
-        <a href="/profile"><button type="submit">Back</B> </button></a>
-      </div>
-
     </div>
   </div>
 </form>

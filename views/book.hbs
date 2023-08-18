@@ -6,7 +6,38 @@
 <div>
     <a href="/book/new-book">New Book</a>
 </div>
-{{/if}}
+<br>
+<table class="books-table">
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Price</th>
+    </tr>
+
+    {{#each allBooks}}
+
+    <td>{{name}}</td>
+    <td>{{author}}</td>
+    <td>{{year}}</td>
+    <td class="price">$ {{price}}</td>
+
+    
+    <td>
+        <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
+    </td>
+
+    <form action="/book/{{_id}}/delete" method="POST">
+        <td>
+            <button class="delete-button">delete</button>
+        </td>
+    </form>
+    
+
+    </tr>
+    {{/each}}
+</table>
+{{else}}
 
 <br>
 <table class="books-table">
@@ -16,7 +47,7 @@
         <th>Year</th>
         <th>Price</th>
     </tr>
- 
+
     {{#each allBooks}}
 
     <td>{{name}}</td>
@@ -24,30 +55,22 @@
     <td>{{year}}</td>
     <td class="price">$ {{price}}</td>
 
-    {{!-- {{#if superUser}}   
-        <td>
-            <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
-        </td>
+    {{#if superUser}}
+    <td>
+        <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
+    </td>
 
-        <form action="/book/{{_id}}/delete" method="POST">
-            <td>
-                <button class="delete-button">delete</button>
-            </td>
-        </form>
-     {{/if}} --}}
-    
+    <form action="/book/{{_id}}/delete" method="POST">
         <td>
-            <a href="/book/{{_id}}/edit"> <button class="edit-button">Edit</button> </a>
+            <button class="delete-button">delete</button>
         </td>
+    </form>
+    {{/if}}
 
-        <form action="/book/{{_id}}/delete" method="POST">
-            <td>
-                <button class="delete-button">delete</button>
-            </td>
-        </form>
-     
     </tr>
     {{/each}}
 </table>
+{{/if}}
+
 
 <!--<a href="/book/id:/delete-book"><button class="delete-button">delete</button></a>-->

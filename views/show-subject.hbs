@@ -1,8 +1,10 @@
-<h1>Showing subject: {{subject.name}}</h1>
+<div class="top-message">
+    <h1>Showing Subject: {{subject.name}}</h1>
+</div>
 
 <div class="container">
     <div class="card-show">
-        <div class="row">
+        <div class="row-profile">
             <label for="pricePerHour">
                 Price Per Hour:
                 <br>
@@ -11,6 +13,7 @@
             </label>
             <br>
             <br>
+            <div class="row">
             <label for="books">
                 Books For This Subject:
                 <br>
@@ -24,8 +27,10 @@
                     {{/each}}
                 </table>
             </label>
+            </div>
         </div>
-        <div class="row">
+        <br>
+        <div class="container-button">
             <a href="/subject"><button>Back</button></a>
         </div>
 

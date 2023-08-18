@@ -1,9 +1,14 @@
-<h1>Editing Book: {{name}}</h1>
+<div class="top-message">
+  <h1>Editing Book: {{name}}</h1>
+</div>
+
+<br>
 
 
 <form action="/book/{{_id}}/edit" method="POST">
-  <div class="container">
-    <div class="card">
+    <div class="card">    <div class="container-button">
+        <a href="/books"><button>Back</button></a>
+    </div>
       <div class="row">
         <label for="name">
           Name
@@ -28,7 +33,7 @@
           <input type="number" name="price" id="price" value="{{price}}" required>
         </label>
       </div>
-      <div class="row">
+      <div class="container-button">
         <button type="submit"> Save Changes </button>
       </div>
     </div>
