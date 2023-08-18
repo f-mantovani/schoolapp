@@ -12,50 +12,78 @@
 </head>
 
 <body>
+  <div class="container-menu" style="border-radius: 25%" ;>
+    <ul class="topnav">
 
-  <img src="../public/images/teste.jpg" alt="">
-  <ul class="topnav">
+      <li><a class="active" href="/">Home</a></li>
 
-    <li><a class="active" href="/">Home</a></li>
+      {{#if isTeacher}}
+      <li><a href="/subject">Subject</a></li>
+      <li><a href="/book">Books</a></li>
+      {{/if}}
 
-    {{#if isTeacher}}
-    <li><a href="/subject">Subject</a></li>
-    <li><a href="/book">Books</a></li>
-    {{/if}}
+      {{#if isStudent}}
+      <li><a href="/book">Books</a></li>
+      {{/if}}
 
-    {{#if isStudent}}
-    <li><a href="/book">Books</a></li>
-    {{/if}}
+      {{#if isAdmin}}
+      <li><a href="/subject">Subject</a></li>
+      <li><a href="/book">Books</a></li>
+      <li><a href="/teacher">Teacher</a></li>
+      <li><a href="/student">Student</a></li>
+      {{/if}}
+      {{!-- <li><a href="/class">Class</a></li> --}}
 
-    {{#if isAdmin}}
-    <li><a href="/subject">Subject</a></li>
-    <li><a href="/book">Books</a></li>
-    <li><a href="/teacher">Teacher</a></li>
-    <li><a href="/student">Student</a></li>
-    {{/if}}
-    {{!-- <li><a href="/class">Class</a></li> --}}
+      <li><a href="/gallery">Photo Gallery</a></li>
 
-    <li><a href="/gallery">Photo Gallery</a></li>
+      <div>
+        <ul >
+          {{#if currentUser}}
+          <li class="right">
+            <div class="dropdown">
+              <a href="#" class="dropbtn">{{ currentUser.name }}</a>
+              <div class="dropdown-content">
+                <a href="/profile">Profile</a>
+                <form id="logout-form" action="/logout" method="POST">
+                  <button>Log Out</button>
+                </form>
+              </div>
+            </div>
+          </li>
+          {{else}}
+          <li class="right"><a href="/signup">Sign up</a></li>
+          <li class="right"><a href="/signin">Sign in</a></li>
+          {{/if}}
+        </ul>
+      </div>
 
-    {{#if currentUser}}
- 
-      {{else}}
-    <li class="right"><a href="/signup">Sign up</a></li>
-    <li class="right"><a href="/signin">Sign in</a></li>
-    {{/if}}
-  </ul>
+    </ul>
 
-  {{#if currentUser}}    
-    <div class="top-message">
-        <a href="/profile" >Profile</a>
-        <form id="logout-form" action="/logout" method="POST">
-          Welcome {{ currentUser.name }} <button>Log Out</button>           
-        </form>            
-    </div>
-  {{/if}}
+    {{!-- {{#if currentUser}}
+    <li class="right">
+      <a href="#" class="submenu-toggle">{{ currentUser.name }}</a>
+      <ul class="submenu">
+        <li><a href="/profile">Profile</a></li>
+        <li>
+          <form id="logout-form" action="/logout" method="POST">
+            <button>Log Out</button>
+          </form>
+        </li>
+      </ul>
+    </li> --}}
+    {{!-- <div class="top-message">
+      <a href="/profile">Profile</a>
+      <form id="logout-form" action="/logout" method="POST">
+        Welcome <button>Log Out</button>
+      </form>
+    </div> --}}
 
 
-  {{{body}}}
+    <div class="container"></div>
+    {{{body}}}
+  </div>
+  </div>
+
 
   <script src="/js/script.js"></script>
 </body>

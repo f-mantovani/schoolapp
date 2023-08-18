@@ -1,12 +1,25 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #7c7c7c;
+  background-color: #ccc;
 
 }
 
 /* Additional styling for each specific detail */
 .books-table td.name {
   font-weight: bold;
+}
+
+
+.container-menu {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;  
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .books-table td.author {
@@ -160,7 +173,8 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #7c7c7c ;
+  /* border-radius: 3%; */
 }
 
 ul.topnav li {
@@ -266,7 +280,6 @@ input[type="number"] {
   width: 95%;
   padding: 10px; /* Aumentei o tamanho do padding */
   margin-bottom: 10px; /* Adicionei um espaçamento entre os campos */
-
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -287,6 +300,104 @@ label {
   
 }
 
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.submenu-toggle:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: inherit;
+  color: inherit;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}  
+  
+
+  .submenu {
+  display: none;
+  }
+  
+  .submenu-toggle:hover .submenu {
+  display: block;
+  }
 
 @media screen and (max-width: 600px) {
 
