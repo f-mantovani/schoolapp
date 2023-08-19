@@ -32,7 +32,7 @@ router.post("/signup", (req, res) => {
 
                     let Mymodel;
 
-                    if (type === "Teacher") {
+                    if (type === "Teacher" || type === "Admin") {
                         Mymodel = require('../models/Teacher.model');
                     } else {
                         Mymodel = require('../models/Student.model');
