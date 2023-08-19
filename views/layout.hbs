@@ -47,12 +47,9 @@
           {{#if currentUser}}
           <li class="right">
             <div class="dropdown">
-              <a href="#" class="dropbtn">{{ currentUser.name }}</a>
+              <a href="/profile" class="dropbtn">{{ currentUser.name }} | Profile</a>
               <div class="dropdown-content">
                 <a href="/profile">Profile</a>
-                <form id="logout-form" action="/logout" method="POST">
-                  <button>Log Out</button>
-                </form>
               </div>
             </div>
           </li>
