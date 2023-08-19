@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-<style>
-  ul{
-     list-style-type: none;
-  }
-</style>
-<body>
-  <div class="container-menu" style="border-radius: 25%" ;>
-    <ul class="topnav">
 
+<body>
+  <br>
+  <div class="container-menu" style="border-radius: 25%" ;>
+    {{#if currentUser}}
+      {{currentUser.type}}
+    {{/if}}
+    <ul class="topnav">
+      
       <li><a class="active" href="/">Home</a></li>
 
       {{#if isTeacher}}
@@ -42,17 +42,14 @@
 
       <li><a href="/gallery">Photo Gallery</a></li>
 
-      <div>
-        <ul >
+      <div class="topnav" style="list-style: none;">
+        <ul>
           {{#if currentUser}}
           <li class="right">
             <div class="dropdown">
-              <a href="#" class="dropbtn">{{ currentUser.name }}</a>
+              <a href="/profile" class="dropbtn">{{ currentUser.name }} | Profile</a>
               <div class="dropdown-content">
                 <a href="/profile">Profile</a>
-                <form id="logout-form" action="/logout" method="POST">
-                  <button>Log Out</button>
-                </form>
               </div>
             </div>
           </li>
@@ -62,32 +59,12 @@
           {{/if}}
         </ul>
       </div>
-
     </ul>
 
-    {{!-- {{#if currentUser}}
-    <li class="right">
-      <a href="#" class="submenu-toggle">{{ currentUser.name }}</a>
-      <ul class="submenu">
-        <li><a href="/profile">Profile</a></li>
-        <li>
-          <form id="logout-form" action="/logout" method="POST">
-            <button>Log Out</button>
-          </form>
-        </li>
-      </ul>
-    </li> --}}
-    {{!-- <div class="top-message">
-      <a href="/profile">Profile</a>
-      <form id="logout-form" action="/logout" method="POST">
-        Welcome <button>Log Out</button>
-      </form>
-    </div> --}}
-
-
     <div class="container"></div>
-    {{{body}}}
-  </div>
+       {{{body}}}
+    </div>
+
   </div>
 
 
